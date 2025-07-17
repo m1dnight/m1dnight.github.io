@@ -1,0 +1,92 @@
+// Page styles
+.page {
+  padding: $spacing-2xl 0;
+  
+  .page-header {
+    text-align: center;
+    margin-bottom: $spacing-3xl;
+    
+    .page-title {
+      font-size: $font-size-4xl;
+      color: $text-dark;
+      margin-bottom: $spacing-lg;
+      
+      @media (max-width: $breakpoint-md) {
+        font-size: $font-size-3xl;
+      }
+    }
+  }
+  
+  .page-content {
+    max-width: 800px;
+    margin: 0 auto;
+    
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: $spacing-2xl;
+      margin-bottom: $spacing-lg;
+      
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    
+    h2 {
+      color: $text-dark;
+      border-bottom: 2px solid rgba($primary-orange, 0.2);
+      padding-bottom: $spacing-sm;
+    }
+    
+    p {
+      font-size: $font-size-lg;
+      line-height: 1.8;
+      margin-bottom: $spacing-xl;
+    }
+    
+    ul, ol {
+      margin-bottom: $spacing-xl;
+      padding-left: $spacing-xl;
+      
+      li {
+        margin-bottom: $spacing-sm;
+        font-size: $font-size-lg;
+        line-height: 1.7;
+      }
+    }
+    
+    blockquote {
+      border-left: 4px solid $primary-orange;
+      padding-left: $spacing-xl;
+      margin: $spacing-2xl 0;
+      font-style: italic;
+      color: $text-light;
+      font-size: $font-size-lg;
+    }
+    
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: $spacing-xl auto;
+      border-radius: $border-radius-md;
+      box-shadow: $shadow-md;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: $spacing-xl 0;
+      
+      th, td {
+        padding: $spacing-md;
+        text-align: left;
+        border-bottom: 1px solid rgba($text-muted, 0.2);
+      }
+      
+      th {
+        background-color: rgba($primary-orange, 0.1);
+        color: $text-dark;
+        font-weight: $font-weight-semibold;
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+// Header styles
+.site-header {
+  background-color: $white;
+  box-shadow: $shadow-sm;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  
+  .navbar {
+    height: $header-height;
+    
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+  }
+  
+  .navbar-brand {
+    font-family: $font-display;
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $text-dark;
+    text-decoration: none;
+    
+    &:hover {
+      color: $primary-orange;
+    }
+  }
+  
+  .navbar-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: $spacing-xl;
+    
+    @media (max-width: $breakpoint-md) {
+      gap: $spacing-lg;
+    }
+    
+    li {
+      margin: 0;
+    }
+    
+    a {
+      font-weight: $font-weight-medium;
+      color: $text-light;
+      text-decoration: none;
+      padding: $spacing-sm $spacing-md;
+      border-radius: $border-radius-sm;
+      transition: all $transition-fast;
+      
+      &:hover {
+        color: $primary-orange;
+        background-color: rgba($primary-orange, 0.1);
+      }
+    }
+  }
+  
+  @media (max-width: $breakpoint-sm) {
+    .navbar-nav {
+      display: none;
+    }
+  }
+}

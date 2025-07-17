@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<section class="posts-section">
+  <div class="container">
+    <div class="posts-grid">
+      {% for post in site.posts limit: 6 %}
+        <article class="post-card">
+          <div class="post-content">
+            <h3 class="post-title">
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h3>
+            <p class="post-meta">
+              <time datetime="{{ post.date | date_to_xmlschema }}">
+                {{ post.date | date: "%B %d, %Y" }}
+              </time>
+              {% if post.categories.size > 0 %}
+                <span class="post-categories">
+                  {% for category in post.categories %}
+                    <span class="category">{{ category }}</span>
+                  {% endfor %}
+                </span>
+              {% endif %}
+            </p>
+            <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+            <a href="{{ post.url | relative_url }}" class="read-more">Read more →</a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+
+    {% if site.posts.size > 6 %}
+      <div class="view-all-posts">
+        <a href="{{ '/posts' | relative_url }}" class="btn btn-primary">View All Posts</a>
+      </div>
+    {% endif %}
+  </div>
+</section>

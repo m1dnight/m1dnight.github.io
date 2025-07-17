@@ -1,0 +1,54 @@
+---
+layout: page
+title: All Posts
+permalink: /posts/
+---
+
+<div class="posts-archive">
+  <div class="posts-grid">
+    {% for post in site.posts %}
+      <article class="post-card">
+        <div class="post-content">
+          <h3 class="post-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+          <p class="post-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">
+              {{ post.date | date: "%B %d, %Y" }}
+            </time>
+            {% if post.categories.size > 0 %}
+              <span class="post-categories">
+                {% for category in post.categories %}
+                  <span class="category">{{ category }}</span>
+                {% endfor %}
+              </span>
+            {% endif %}
+          </p>
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+          <a href="{{ post.url | relative_url }}" class="read-more">Read more →</a>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+.posts-archive {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 576px) {
+  .posts-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+</style>

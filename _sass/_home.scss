@@ -1,0 +1,133 @@
+// Home page styles
+.hero-section {
+  background: linear-gradient(135deg, rgba($primary-orange, 0.1) 0%, rgba($secondary-orange, 0.05) 100%);
+  padding: $spacing-3xl 0;
+  text-align: center;
+  
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .hero-title {
+    font-size: $font-size-5xl;
+    font-weight: $font-weight-bold;
+    color: $text-dark;
+    margin-bottom: $spacing-lg;
+    
+    @media (max-width: $breakpoint-md) {
+      font-size: $font-size-4xl;
+    }
+  }
+  
+  .hero-subtitle {
+    font-size: $font-size-xl;
+    color: $text-light;
+    margin-bottom: 0;
+    
+    @media (max-width: $breakpoint-md) {
+      font-size: $font-size-lg;
+    }
+  }
+}
+
+.posts-section {
+  padding: $spacing-3xl 0;
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: $spacing-3xl;
+    color: $text-dark;
+  }
+  
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: $spacing-2xl;
+    margin-bottom: $spacing-3xl;
+    
+    @media (max-width: $breakpoint-sm) {
+      grid-template-columns: 1fr;
+      gap: $spacing-xl;
+    }
+  }
+  
+  .post-card {
+    background: $white;
+    border-radius: $border-radius-lg;
+    padding: $spacing-xl;
+    box-shadow: $shadow-md;
+    transition: transform $transition-normal, box-shadow $transition-normal;
+    
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: $shadow-lg;
+    }
+    
+    .post-title {
+      font-size: $font-size-xl;
+      margin-bottom: $spacing-md;
+      
+      a {
+        color: $text-dark;
+        text-decoration: none;
+        
+        &:hover {
+          color: $primary-orange;
+        }
+      }
+    }
+    
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: $spacing-md;
+      margin-bottom: $spacing-lg;
+      font-size: $font-size-sm;
+      color: $text-muted;
+      
+      time {
+        color: $text-light;
+      }
+      
+      .post-categories {
+        display: flex;
+        gap: $spacing-xs;
+        
+        .category {
+          background-color: rgba($primary-orange, 0.1);
+          color: $primary-orange;
+          padding: 2px 8px;
+          border-radius: $border-radius-sm;
+          font-size: $font-size-xs;
+          font-weight: $font-weight-medium;
+        }
+      }
+    }
+    
+    .post-excerpt {
+      color: $text-light;
+      margin-bottom: $spacing-lg;
+      line-height: 1.6;
+    }
+    
+    .read-more {
+      color: $primary-orange;
+      font-weight: $font-weight-medium;
+      text-decoration: none;
+      
+      &:hover {
+        color: $accent-orange;
+      }
+    }
+  }
+  
+  .view-all-posts {
+    text-align: center;
+    
+    .btn {
+      font-size: $font-size-lg;
+      padding: $spacing-lg $spacing-2xl;
+    }
+  }
+}
